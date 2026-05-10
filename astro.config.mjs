@@ -3,4 +3,6 @@ import react from '@astrojs/react';
 
 export default defineConfig({
   integrations: [react()],
+  site: 'https://mario-herlein.github.io',
+  base: '/Sucesiones-',
 });
