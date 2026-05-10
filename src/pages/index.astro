@@ -1,0 +1,51 @@
+---
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import TrustBar from '../components/TrustBar';
+import PainPoints from '../components/PainPoints';
+import ServicesGrid from '../components/ServicesGrid';
+import ProcessSteps from '../components/ProcessSteps';
+import TransparentFees from '../components/TransparentFees';
+import LawyerBio from '../components/LawyerBio';
+import Testimonials from '../components/Testimonials';
+import FAQ from '../components/FAQ';
+import FinalCTA from '../components/FinalCTA';
+import Footer from '../components/Footer';
+import StickyWhatsApp from '../components/StickyWhatsApp';
+import StickyMobileCTA from '../components/StickyMobileCTA';
+
+import '../styles/global.css';
+import '../styles/landing.css';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Saucedo &amp; Asociados · Sucesiones en CABA y Buenos Aires</title>
+    <meta
+      name="description"
+      content="Tramitamos tu juicio sucesorio con presupuesto cerrado, plazos comprometidos y el acompañamiento que el momento merece. Especialistas en CABA y Buenos Aires."
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+  </head>
+  <body>
+    <Header client:load />
+    <main id="hero">
+      <Hero client:load />
+      <TrustBar />
+      <PainPoints />
+      <ServicesGrid />
+      <ProcessSteps />
+      <TransparentFees />
+      <LawyerBio />
+      <Testimonials />
+      <FAQ client:load />
+      <FinalCTA />
+    </main>
+    <Footer />
+    <StickyWhatsApp />
+    <StickyMobileCTA client:load />
+  </body>
+</html>
