@@ -119,15 +119,19 @@
 @media (max-width: 900px) { .fees-grid { grid-template-columns: 1fr; } }
 
 /* ---------- Lawyer bio ---------- */
-.bio__grid { display: grid; grid-template-columns: 320px 1fr; gap: 56px; align-items: center; }
+.bio__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.bio__photo-wrap { border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-deep); }
 .bio__photo {
-  aspect-ratio: 4/5;
-  border-radius: 12px;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center top;
+  /* placeholder mientras se carga la imagen real */
   background:
     linear-gradient(180deg, rgba(10,37,64,0.05), rgba(10,37,64,0.25)),
     repeating-linear-gradient(135deg, #cfc6b0 0 2px, #ddd3bd 2px 14px);
-  position: relative;
-  overflow: hidden;
 }
 .bio h2 { margin-top: 0; }
 .bio__credentials { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
@@ -135,7 +139,7 @@
 .bio__cred .ico { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
 .bio__cred .t { font-weight: 600; color: var(--ink); font-size: 15px; line-height: 1.4; }
 .bio__cred .s { font-size: 13px; color: var(--ink-soft); line-height: 1.4; }
-@media (max-width: 800px) { .bio__grid { grid-template-columns: 1fr; gap: 28px; } .bio__photo { max-width: 280px; } }
+@media (max-width: 800px) { .bio__grid { grid-template-columns: 1fr; gap: 32px; } }
 
 /* ---------- Testimonials ---------- */
 .tst-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
