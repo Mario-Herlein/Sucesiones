@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import Icon from './Icon';
 
-export default function Header() {
+interface Props { logoSrc: string; }
+
+export default function Header({ logoSrc }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="hdr">
       <div className="container hdr__inner">
         <a href="#" className="hdr__logo" aria-label="Saucedo & Asociados">
-          <img src="/assets/Logo-sin-fondo.png" alt="Saucedo & Asociados" />
+          <img src={logoSrc} alt="Saucedo & Asociados" />
         </a>
         <nav className="hdr__nav" aria-label="Principal">
           <a href="#servicios">Servicios</a>

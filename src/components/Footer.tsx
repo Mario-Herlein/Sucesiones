@@ -1,13 +1,15 @@
 import Icon from './Icon';
 
-export default function Footer() {
+interface Props { logoSrc: string; }
+
+export default function Footer({ logoSrc }: Props) {
   return (
     <footer className="ft">
       <div className="container">
         <div className="ft__grid">
           <div>
             <div className="ft__logo">
-              <img src="/assets/Logo-sin-fondo.png" alt="Saucedo & Asociados" />
+              <img src={logoSrc} alt="Saucedo & Asociados" />
             </div>
             <p className="ft__about">
               Estudio jurídico especializado en sucesiones. Atendemos en CABA y Buenos Aires.

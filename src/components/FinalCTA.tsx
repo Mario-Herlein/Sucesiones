@@ -7,7 +7,6 @@ export default function FinalCTA() {
         <div className="eyebrow">Hablemos</div>
         <hr className="rule-gold" style={{ marginInline: 'auto' }} />
         <h2>Hablemos de tu caso hoy.</h2>
-        <p>Primera consulta sin cargo. Respondemos en menos de 24hs hábiles.</p>
         <div className="fcta__buttons">
           <a className="btn btn--primary" href="#consulta">Consultar sin cargo</a>
           <a
@@ -19,6 +18,7 @@ export default function FinalCTA() {
             <Icon name="whatsapp" size={14} /> Hablar por WhatsApp
           </a>
         </div>
+        <p className="fcta__urgency">Primera consulta sin cargo · Respondemos hoy en horario hábil (L–V 9 a 19h)</p>
         <div className="fcta__contact">
           <div className="fcta__contact-item">
             <span className="ico"><Icon name="message-circle" size={20} /></span>

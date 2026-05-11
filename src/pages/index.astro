@@ -1,12 +1,15 @@
 ---
+import { getImage } from 'astro:assets';
+import logoRaw from '../assets/Logo-sin-fondo.png';
+
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import TrustBar from '../components/TrustBar';
 import PainPoints from '../components/PainPoints';
 import ServicesGrid from '../components/ServicesGrid';
 import ProcessSteps from '../components/ProcessSteps';
-import TransparentFees from '../components/TransparentFees';
 import LawyerBio from '../components/LawyerBio';
+import TransparentFees from '../components/TransparentFees';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import FinalCTA from '../components/FinalCTA';
@@ -16,6 +19,12 @@ import StickyMobileCTA from '../components/StickyMobileCTA';
 
 import '../styles/global.css';
 import '../styles/landing.css';
+
+const logo = await getImage({ src: logoRaw, format: 'webp', quality: 85, width: 220 });
+
+const siteUrl = 'https://saucedoasociados.com.ar';
+const pageTitle = 'Saucedo & Asociados · Sucesiones en CABA y Buenos Aires';
+const pageDesc = 'Tramitamos tu juicio sucesorio con presupuesto cerrado, plazos comprometidos y el acompañamiento que el momento merece. Especialistas en CABA y Buenos Aires.';
 ---
 
 <!doctype html>
@@ -23,29 +32,41 @@ import '../styles/landing.css';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Saucedo &amp; Asociados · Sucesiones en CABA y Buenos Aires</title>
-    <meta
-      name="description"
-      content="Tramitamos tu juicio sucesorio con presupuesto cerrado, plazos comprometidos y el acompañamiento que el momento merece. Especialistas en CABA y Buenos Aires."
-    />
-    <link rel="icon" type="image/png" href="/assets/Logo-sin-fondo.png" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <link rel="icon" type="image/webp" href={logo.src} />
+    <link rel="canonical" href={siteUrl} />
+
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:image" content={`${siteUrl}/assets/equipo.webp`} />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDesc} />
+    <meta name="twitter:image" content={`${siteUrl}/assets/equipo.webp`} />
   </head>
   <body>
-    <Header client:load />
+    <Header logoSrc={logo.src} client:load />
     <main id="hero">
       <Hero client:load />
       <TrustBar />
       <PainPoints />
       <ServicesGrid />
       <ProcessSteps />
-      <TransparentFees />
       <LawyerBio />
+      <TransparentFees />
       <Testimonials />
-      <FAQ client:load />
+      <FAQ client:visible />
       <FinalCTA />
     </main>
-    <Footer />
+    <Footer logoSrc={logo.src} />
     <StickyWhatsApp />
-    <StickyMobileCTA client:load />
+    <StickyMobileCTA client:idle />
   </body>
 </html>

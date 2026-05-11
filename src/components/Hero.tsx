@@ -83,7 +83,7 @@ function HeroForm() {
         />
       </div>
       <button type="submit" className="btn btn--primary" style={{ width: '100%' }}>
-        Enviar consulta
+        Consultar sin cargo
       </button>
       <span className="legal">
         <span className="ico"><Icon name="lock" size={14} /></span>

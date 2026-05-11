@@ -2,7 +2,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -112,7 +112,7 @@ hr.rule-gold {
 .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
 .field label { font-size: 13px; font-weight: 500; color: var(--ink-soft); }
 .field input, .field select, .field textarea {
-  font-family: var(--font-body); font-size: 15px;
+  font-family: var(--font-body); font-size: 16px;
   padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px;
   background: var(--white); color: var(--ink); outline: none;
   transition: border-color var(--dur-base) var(--ease-standard),

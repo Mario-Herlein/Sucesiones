@@ -189,6 +189,7 @@
 .fcta__contact-item .ico { color: var(--gold); }
 .fcta__contact-item a { color: inherit; text-decoration: none; }
 .fcta__contact-item a:hover { color: var(--gold); }
+.fcta__urgency { font-size: 13px; color: rgba(255,255,255,0.60); margin: 16px 0 0; }
 @media (max-width: 700px) { .fcta h2 { font-size: 32px; } .fcta p { font-size: 16px; } }
 @media (max-width: 540px) {
   .fcta__buttons { flex-direction: column; width: 100%; max-width: 320px; }
