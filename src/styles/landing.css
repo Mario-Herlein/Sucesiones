@@ -6,8 +6,8 @@
   -webkit-backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border);
 }
-.hdr__inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-.hdr__logo img { height: 72px; width: auto; display: block; }
+.hdr__inner { display: flex; align-items: center; justify-content: space-between; height: 90px; }
+.hdr__logo img { height: 88px; width: auto; display: block; }
 .hdr__nav { display: flex; align-items: center; gap: 28px; }
 .hdr__nav a { font-family: var(--font-body); font-size: 14px; color: var(--ink); text-decoration: none; font-weight: 500; }
 .hdr__nav a:hover { color: var(--navy-soft); }
@@ -18,7 +18,7 @@
 .hdr__wa-btn:hover { background: #1EB955; color: var(--white); }
 .hdr__hamburger { display: none; background: transparent; border: 0; color: var(--ink); cursor: pointer; padding: 6px; }
 @media (max-width: 900px) { .hdr__nav { display: none; } .hdr__phone { display: none; } .hdr__hamburger { display: inline-flex; } }
-.hdr__sheet { position: fixed; inset: 76px 0 0 0; background: var(--off-white); z-index: 49; padding: 24px var(--gutter); display: none; }
+.hdr__sheet { position: fixed; inset: 90px 0 0 0; background: var(--off-white); z-index: 49; padding: 24px var(--gutter); display: none; }
 .hdr__sheet.open { display: block; }
 .hdr__sheet a { display: block; padding: 14px 0; border-bottom: 1px solid var(--border); font-family: var(--font-body); font-size: 17px; color: var(--ink); text-decoration: none; font-weight: 500; }
 
@@ -182,7 +182,7 @@
 /* ---------- Footer ---------- */
 .ft { background: #061b30; color: rgba(255,255,255,0.74); padding-block: 56px 32px; }
 .ft__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; }
-.ft__logo img { height: 72px; width: auto; }
+.ft__logo img { height: 88px; width: auto; }
 .ft__col h4 { font-family: var(--font-body); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin: 0 0 16px; }
 .ft__col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .ft__col a { color: rgba(255,255,255,0.74); text-decoration: none; font-size: 14px; }
