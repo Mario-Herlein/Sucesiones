@@ -13,7 +13,7 @@ export default function StickyMobileCTA() {
 
   return (
     <div className={`sticky-mobile${show ? ' is-visible' : ''}`}>
-      <a className="btn btn--secondary" href="#contacto">Consultar</a>
+      <a className="btn btn--secondary" href="#consulta">Consultar sin cargo</a>
       <a
         className="btn btn--whatsapp"
         href="https://wa.me/5491141664386"

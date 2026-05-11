@@ -26,7 +26,7 @@ export default function TransparentFees() {
           ))}
         </div>
         <div className="fees__cta">
-          <a className="btn btn--navy" href="#contacto">Pedí tu presupuesto sin compromiso</a>
+          <a className="btn btn--navy" href="#consulta">Consultar sin cargo</a>
         </div>
       </div>
     </section>

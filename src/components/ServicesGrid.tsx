@@ -24,8 +24,8 @@ export default function ServicesGrid() {
               <div className="svc__icon"><Icon name={s.icon} size={44} /></div>
               <h3>{s.title}</h3>
               <p>{s.body}</p>
-              <a className="svc__link" href="#contacto">
-                Consultar este caso{' '}
+              <a className="svc__link" href="#consulta">
+                Consultar sin cargo{' '}
                 <span className="arrow"><Icon name="arrow-right" size={14} /></span>
               </a>
             </article>

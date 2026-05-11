@@ -9,7 +9,7 @@ export default function FinalCTA() {
         <h2>Hablemos de tu caso hoy.</h2>
         <p>Primera consulta sin cargo. Respondemos en menos de 24hs hábiles.</p>
         <div className="fcta__buttons">
-          <a className="btn btn--primary" href="#hero">Iniciar mi consulta</a>
+          <a className="btn btn--primary" href="#consulta">Consultar sin cargo</a>
           <a
             className="btn btn--secondary btn--secondary--light"
             href="https://wa.me/5491141664386"

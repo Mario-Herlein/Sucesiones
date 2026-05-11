@@ -109,7 +109,7 @@ export default function Hero() {
             y el acompañamiento que el momento merece. Especialistas en CABA y Buenos Aires.
           </p>
           <div className="hero__ctas">
-            <a className="btn btn--primary" href="#contacto">Iniciar mi consulta</a>
+            <a className="btn btn--primary" href="#consulta">Consultar sin cargo</a>
             <a
               className="btn btn--secondary"
               href="https://wa.me/5491141664386"
@@ -124,7 +124,7 @@ export default function Hero() {
             Primera consulta sin cargo · Respuesta en menos de 24hs hábiles
           </div>
         </div>
-        <HeroForm />
+        <div id="consulta"><HeroForm /></div>
       </div>
     </section>
   );

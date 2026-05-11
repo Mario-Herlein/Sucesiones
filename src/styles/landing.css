@@ -18,7 +18,12 @@
 .hdr__wa-btn:hover { background: #1EB955; color: var(--white); }
 .hdr__hamburger { display: none; background: transparent; border: 0; color: var(--ink); cursor: pointer; padding: 6px; }
 @media (max-width: 900px) { .hdr__nav { display: none; } .hdr__phone { display: none; } .hdr__hamburger { display: inline-flex; } }
+@media (max-width: 640px) {
+  .hdr__inner { height: 64px; }
+  .hdr__logo img { height: 58px; }
+}
 .hdr__sheet { position: fixed; inset: 90px 0 0 0; background: var(--off-white); z-index: 49; padding: 24px var(--gutter); display: none; }
+@media (max-width: 640px) { .hdr__sheet { inset: 64px 0 0 0; } }
 .hdr__sheet.open { display: block; }
 .hdr__sheet a { display: block; padding: 14px 0; border-bottom: 1px solid var(--border); font-family: var(--font-body); font-size: 17px; color: var(--ink); text-decoration: none; font-weight: 500; }
 
@@ -44,8 +49,14 @@
 }
 @media (max-width: 900px) {
   .hero__grid, .hero__grid--form { grid-template-columns: 1fr; gap: 36px; }
-  .hero h1 { font-size: 32px; }
+  .hero h1 { font-size: 36px; }
+  .hero .lead { font-size: 17px; }
+}
+@media (max-width: 640px) {
+  .hero { padding-top: 32px; padding-bottom: 40px; }
+  .hero h1 { font-size: 30px; }
   .hero .lead { font-size: 16px; }
+  .hero-form-card { padding: 20px; }
 }
 
 /* ---------- Hero form card ---------- */
@@ -95,7 +106,8 @@
 .svc__link:hover { color: var(--gold); }
 .svc__link .arrow { transition: transform var(--dur-base) var(--ease-standard); }
 .svc__link:hover .arrow { transform: translateX(3px); }
-@media (max-width: 900px) { .svc-grid, .svc-grid--5 { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .svc-grid, .svc-grid--5 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .svc-grid, .svc-grid--5 { grid-template-columns: 1fr; } .svc { padding: 20px; } }
 
 /* ---------- Process steps ---------- */
 .steps { display: grid; gap: 24px; }
@@ -178,6 +190,11 @@
 .fcta__contact-item a { color: inherit; text-decoration: none; }
 .fcta__contact-item a:hover { color: var(--gold); }
 @media (max-width: 700px) { .fcta h2 { font-size: 32px; } .fcta p { font-size: 16px; } }
+@media (max-width: 540px) {
+  .fcta__buttons { flex-direction: column; width: 100%; max-width: 320px; }
+  .fcta__buttons .btn { width: 100%; }
+  .fcta__contact { flex-direction: column; align-items: center; gap: 14px; }
+}
 
 /* ---------- Footer ---------- */
 .ft { background: #061b30; color: rgba(255,255,255,0.74); padding-block: 56px 32px; }
@@ -200,6 +217,7 @@
 .ft__legal a { color: inherit; text-decoration: none; }
 .ft__legal a:hover { color: var(--white); }
 @media (max-width: 800px) { .ft__grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (max-width: 480px) { .ft__grid { grid-template-columns: 1fr; gap: 24px; } .ft__logo img { height: 60px; } }
 
 /* ---------- Sticky WhatsApp ---------- */
 .sticky-wa {
@@ -226,5 +244,5 @@
 .sticky-mobile .btn { flex: 1; padding: 14px 14px; font-size: 11px; }
 @media (max-width: 800px) {
   .sticky-mobile { display: flex; }
-  .sticky-wa { bottom: 84px; }
+  .sticky-wa { bottom: 88px; }
 }
