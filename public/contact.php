@@ -59,10 +59,10 @@ $situacionLabels = [
 $situacionLabel = $situacionLabels[$situacion] ?? 'Otra consulta';
 
 // Construir email
-$destinatario = 'hola@saucedoasociados.com.ar';
+$destinatario = 'info@saucedo-asociados.com.ar';
 $asunto       = '=?UTF-8?B?' . base64_encode('Nueva consulta — ' . $nombre) . '?=';
 
-$cuerpo  = "Nueva consulta recibida desde saucedoasociados.com.ar\n";
+$cuerpo  = "Nueva consulta recibida desde saucedo-asociados.com.ar\n";
 $cuerpo .= str_repeat('-', 50) . "\n\n";
 $cuerpo .= "Nombre:    $nombre\n";
 $cuerpo .= "Teléfono:  $telefono\n";
@@ -74,8 +74,9 @@ if (!empty($mensaje)) {
 $cuerpo .= "\n" . str_repeat('-', 50) . "\n";
 $cuerpo .= 'Recibido el ' . date('d/m/Y') . ' a las ' . date('H:i') . " hs (hora del servidor)\n";
 
-$cabeceras  = "From: Saucedo & Asociados <noreply@saucedoasociados.com.ar>\r\n";
+$cabeceras  = "From: Saucedo & Asociados <info@saucedo-asociados.com.ar>\r\n";
 $cabeceras .= "Reply-To: {$nombre} <{$email}>\r\n";
+$cabeceras .= "CC: saucedoabogada@gmail.com, marioherlein@gmail.com\r\n";
 $cabeceras .= "MIME-Version: 1.0\r\n";
 $cabeceras .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $cabeceras .= "Content-Transfer-Encoding: 8bit\r\n";
