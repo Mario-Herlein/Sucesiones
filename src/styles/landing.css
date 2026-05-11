@@ -241,8 +241,8 @@
   transform: translateY(100%); transition: transform var(--dur-base) var(--ease-standard);
 }
 .sticky-mobile.is-visible { transform: translateY(0); }
-.sticky-mobile .btn { flex: 1; padding: 14px 14px; font-size: 11px; }
+.sticky-mobile .btn { flex: 1; padding: 13px 8px; font-size: 10px; letter-spacing: 0.05em; white-space: nowrap; }
 @media (max-width: 800px) {
   .sticky-mobile { display: flex; }
-  .sticky-wa { bottom: 88px; }
+  .sticky-wa { display: none; }
 }
