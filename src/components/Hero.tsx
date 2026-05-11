@@ -5,21 +5,51 @@ function HeroForm() {
   const [form, setForm] = useState({
     nombre: '', telefono: '', email: '', situacion: 'inmueble', mensaje: '',
   });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors]         = useState<Record<string, string>>({});
+  const [submitted, setSubmitted]   = useState(false);
+  const [loading, setLoading]       = useState(false);
+  const [serverError, setServerError] = useState('');
 
   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setForm({ ...form, [k]: e.target.value });
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validación client-side
     const errs: Record<string, string> = {};
-    if (!form.nombre.trim()) errs.nombre = 'Decinos cómo te llamás.';
+    if (!form.nombre.trim())   errs.nombre   = 'Decinos cómo te llamás.';
     if (!form.telefono.trim()) errs.telefono = 'Necesitamos un teléfono o WhatsApp.';
-    if (!form.email.trim()) errs.email = 'Dejanos un email para responderte.';
+    if (!form.email.trim())    errs.email    = 'Dejanos un email para responderte.';
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = 'Revisá el email.';
     setErrors(errs);
-    if (Object.keys(errs).length === 0) setSubmitted(true);
+    if (Object.keys(errs).length > 0) return;
+
+    setLoading(true);
+    setServerError('');
+
+    try {
+      const data = new FormData();
+      data.append('nombre',    form.nombre);
+      data.append('telefono',  form.telefono);
+      data.append('email',     form.email);
+      data.append('situacion', form.situacion);
+      data.append('mensaje',   form.mensaje);
+      data.append('website',   ''); // honeypot
+
+      const res  = await fetch('/contact.php', { method: 'POST', body: data });
+      const json = await res.json() as { ok: boolean; error?: string };
+
+      if (json.ok) {
+        setSubmitted(true);
+      } else {
+        setServerError(json.error ?? 'Algo salió mal. Por favor intentá por WhatsApp.');
+      }
+    } catch {
+      setServerError('No pudimos conectarnos. Por favor intentá por WhatsApp.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -43,6 +73,13 @@ function HeroForm() {
     <form className="hero-form-card" onSubmit={onSubmit} noValidate>
       <h3>Contanos tu caso</h3>
       <p className="sub">Te respondemos hoy.</p>
+
+      {/* Honeypot — invisible para humanos, los bots lo completan */}
+      <div className="hp-field" aria-hidden="true">
+        <label htmlFor="hf-w">Website</label>
+        <input id="hf-w" type="text" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className={`field${errors.nombre ? ' field--err' : ''}`}>
         <label htmlFor="hf-n">Nombre y apellido</label>
         <input id="hf-n" type="text" value={form.nombre} onChange={set('nombre')} placeholder="Mariana López" />
@@ -82,8 +119,20 @@ function HeroForm() {
           placeholder="Mi papá falleció hace dos meses..."
         />
       </div>
-      <button type="submit" className="btn btn--primary" style={{ width: '100%' }}>
-        Consultar sin cargo
+
+      {serverError && (
+        <p className="form-server-error">
+          <Icon name="alert-circle" size={14} /> {serverError}
+        </p>
+      )}
+
+      <button
+        type="submit"
+        className="btn btn--primary"
+        style={{ width: '100%' }}
+        disabled={loading}
+      >
+        {loading ? 'Enviando…' : 'Consultar sin cargo'}
       </button>
       <span className="legal">
         <span className="ico"><Icon name="lock" size={14} /></span>
