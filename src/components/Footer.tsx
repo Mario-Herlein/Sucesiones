@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="ft__grid">
           <div>
             <div className="ft__logo">
-              <img src="/assets/logo-light.svg" alt="Saucedo & Asociados" />
+              <img src="/assets/logo.png" alt="Saucedo & Asociados" />
             </div>
             <p className="ft__about">
               Estudio jurídico especializado en sucesiones. Atendemos en CABA y Buenos Aires.
@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="ft__col">
             <h4>Estudio</h4>
             <ul>
-              <li><a href="#abogada">Sobre la Dra. Saucedo</a></li>
+              <li><a href="#equipo">El estudio</a></li>
               <li><a href="#proceso">Cómo trabajamos</a></li>
               <li><a href="#honorarios">Honorarios</a></li>
               <li><a href="#faq">Preguntas frecuentes</a></li>

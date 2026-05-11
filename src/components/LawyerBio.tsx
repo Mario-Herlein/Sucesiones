@@ -7,7 +7,7 @@ export default function LawyerBio() {
         <div className="bio__photo-wrap">
           <img
             className="bio__photo"
-            src="/assets/equipo.jpg"
+            src="/assets/equipo.webp"
             alt="Saucedo & Asociados — equipo de abogadas especializadas en sucesiones"
             loading="lazy"
           />
