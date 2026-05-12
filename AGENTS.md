@@ -182,6 +182,8 @@ Upload the full contents of `dist/` to the `/sucesiones` directory on the hostin
 
 There may be a dirty worktree. Do not revert or overwrite unrelated user changes.
 
+Remote repository: `https://github.com/Mario-Herlein/Sucesiones` on branch `main`.
+
 Recommended workflow:
 
 1. Edit and test in `G:\My Drive\Varios\Maria\Web\Sucesiones\repo-clone\`.
