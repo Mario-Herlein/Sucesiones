@@ -4,5 +4,6 @@ import react from '@astrojs/react';
 export default defineConfig({
   integrations: [react()],
   output: 'static',
-  site: 'https://saucedoasociados.com.ar',
+  site: 'https://saucedo-asociados.com.ar',
+  base: '/sucesiones',
 });

@@ -24,11 +24,16 @@ function clean(string $val): string {
     return trim(strip_tags($val));
 }
 
+function clean_header(string $val): string {
+    return str_replace(["\r", "\n"], '', clean($val));
+}
+
 $nombre    = clean($_POST['nombre']    ?? '');
 $telefono  = clean($_POST['telefono']  ?? '');
 $email     = clean($_POST['email']     ?? '');
 $situacion = clean($_POST['situacion'] ?? '');
 $mensaje   = clean($_POST['mensaje']   ?? '');
+$consentimiento = clean($_POST['consentimiento'] ?? '');
 
 // Validar
 if (empty($nombre)) {
@@ -46,6 +51,11 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo json_encode(['ok' => false, 'error' => 'El email no es válido.']);
     exit;
 }
+if ($consentimiento !== '1') {
+    http_response_code(422);
+    echo json_encode(['ok' => false, 'error' => 'Necesitamos tu consentimiento para responder la consulta.']);
+    exit;
+}
 
 // Whitelist de valores válidos para situacion
 $situacionLabels = [
@@ -59,15 +69,18 @@ $situacionLabels = [
 $situacionLabel = $situacionLabels[$situacion] ?? 'Otra consulta';
 
 // Construir email
-$destinatario = 'info@saucedo-asociados.com.ar';
-$asunto       = '=?UTF-8?B?' . base64_encode('Nueva consulta — ' . $nombre) . '?=';
+$destinatario = 'saucedoabogada@gmail.com';
+$nombreHeader = clean_header($nombre);
+$emailHeader  = clean_header($email);
+$asunto       = '=?UTF-8?B?' . base64_encode('Nueva consulta - Sucesiones - ' . $nombreHeader) . '?=';
 
-$cuerpo  = "Nueva consulta recibida desde saucedo-asociados.com.ar\n";
+$cuerpo  = "Nueva consulta recibida desde saucedo-asociados.com.ar/sucesiones\n";
 $cuerpo .= str_repeat('-', 50) . "\n\n";
 $cuerpo .= "Nombre:    $nombre\n";
 $cuerpo .= "Teléfono:  $telefono\n";
 $cuerpo .= "Email:     $email\n";
 $cuerpo .= "Consulta:  $situacionLabel\n";
+$cuerpo .= "Consentimiento: aceptado\n";
 if (!empty($mensaje)) {
     $cuerpo .= "\nMensaje:\n" . wordwrap($mensaje, 72, "\n") . "\n";
 }
@@ -75,8 +88,8 @@ $cuerpo .= "\n" . str_repeat('-', 50) . "\n";
 $cuerpo .= 'Recibido el ' . date('d/m/Y') . ' a las ' . date('H:i') . " hs (hora del servidor)\n";
 
 $cabeceras  = "From: Saucedo & Asociados <info@saucedo-asociados.com.ar>\r\n";
-$cabeceras .= "Reply-To: {$nombre} <{$email}>\r\n";
-$cabeceras .= "CC: saucedoabogada@gmail.com, marioherlein@gmail.com\r\n";
+$cabeceras .= "Reply-To: {$nombreHeader} <{$emailHeader}>\r\n";
+$cabeceras .= "CC: marioherlein@gmail.com\r\n";
 $cabeceras .= "MIME-Version: 1.0\r\n";
 $cabeceras .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $cabeceras .= "Content-Transfer-Encoding: 8bit\r\n";

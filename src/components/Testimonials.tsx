@@ -34,7 +34,7 @@ export default function Testimonials() {
         </div>
         <div className="tst__google">
           <a
-            href="https://www.google.com/search?q=Saucedo+%26+Asociados"
+            href="https://maps.app.goo.gl/yBnCdwSroLb8HQqh7"
             target="_blank"
             rel="noopener noreferrer"
           >

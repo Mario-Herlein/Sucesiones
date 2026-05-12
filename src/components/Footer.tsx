@@ -15,16 +15,16 @@ export default function Footer({ logoSrc }: Props) {
               Estudio jurídico especializado en sucesiones. Atendemos en CABA y Buenos Aires.
             </p>
             <div className="ft__social">
-              <a href="https://facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/profile.php?id=61579118501781" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                 <Icon name="facebook" size={18} />
               </a>
-              <a href="https://instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/saucedoasociados/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                 <Icon name="instagram" size={18} />
               </a>
-              <a href="https://threads.net/" aria-label="Threads" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.threads.com/@saucedoasociados" aria-label="Threads" target="_blank" rel="noopener noreferrer">
                 <Icon name="threads" size={18} />
               </a>
-              <a href="https://wa.me/5491141664386" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5491141664386?text=Hola,%20quiero%20una%20consulta%20sobre%20una%20sucesi%C3%B3n" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
                 <Icon name="whatsapp" size={18} />
               </a>
             </div>
@@ -52,7 +52,7 @@ export default function Footer({ logoSrc }: Props) {
             <h4>Contacto</h4>
             <div className="ft__contact-line">
               <span className="ico"><Icon name="map-pin" size={16} /></span>
-              Av. Pte. Julio A. Roca 695 5°B, CABA
+              <a href="https://maps.app.goo.gl/yBnCdwSroLb8HQqh7" target="_blank" rel="noopener noreferrer">Av. Pte. Julio A. Roca 695 5°B, CABA</a>
             </div>
             <div className="ft__contact-line">
               <span className="ico"><Icon name="phone" size={16} /></span>
@@ -60,18 +60,14 @@ export default function Footer({ logoSrc }: Props) {
             </div>
             <div className="ft__contact-line">
               <span className="ico"><Icon name="mail" size={16} /></span>
-              <a href="mailto:hola@saucedoasociados.com.ar">hola@saucedoasociados.com.ar</a>
-            </div>
-            <div className="ft__contact-line">
-              <span className="ico"><Icon name="clock" size={16} /></span>
-              L–V 9 a 19h
+              <a href="mailto:info@saucedo-asociados.com.ar">info@saucedo-asociados.com.ar</a>
             </div>
           </div>
         </div>
         <div className="ft__legal">
-          <span>© 2025 Saucedo &amp; Asociados · CUIT 30-00000000-0</span>
+          <span>© 2026 Saucedo &amp; Asociados</span>
           <span>
-            <a href="#">Política de privacidad</a> · <a href="#">Aviso legal</a>
+            <a href="/sucesiones/politica-privacidad/">Política de privacidad</a> · <a href="/sucesiones/aviso-legal/">Aviso legal</a>
           </span>
         </div>
       </div>

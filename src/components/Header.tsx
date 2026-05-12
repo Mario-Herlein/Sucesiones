@@ -24,7 +24,7 @@ export default function Header({ logoSrc }: Props) {
           </a>
           <a
             className="hdr__wa-btn"
-            href="https://wa.me/5491141664386"
+            href="https://wa.me/5491141664386?text=Hola,%20quiero%20una%20consulta%20sobre%20una%20sucesi%C3%B3n"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -33,6 +33,7 @@ export default function Header({ logoSrc }: Props) {
           <button
             className="hdr__hamburger"
             aria-label="Abrir menú"
+            aria-expanded={open}
             onClick={() => setOpen(!open)}
           >
             <Icon name={open ? 'x' : 'menu'} size={26} />

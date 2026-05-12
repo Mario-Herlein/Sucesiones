@@ -16,7 +16,7 @@ export default function StickyMobileCTA() {
       <a className="btn btn--secondary" href="#consulta">Consultar sin cargo</a>
       <a
         className="btn btn--whatsapp"
-        href="https://wa.me/5491141664386"
+        href="https://wa.me/5491141664386?text=Hola,%20quiero%20una%20consulta%20sobre%20una%20sucesi%C3%B3n"
         target="_blank"
         rel="noopener noreferrer"
       >

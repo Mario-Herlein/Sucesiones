@@ -11,26 +11,26 @@ export default function FinalCTA() {
           <a className="btn btn--primary" href="#consulta">Consultar sin cargo</a>
           <a
             className="btn btn--secondary btn--secondary--light"
-            href="https://wa.me/5491141664386"
+            href="https://wa.me/5491141664386?text=Hola,%20quiero%20una%20consulta%20sobre%20una%20sucesi%C3%B3n"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Icon name="whatsapp" size={14} /> Hablar por WhatsApp
           </a>
         </div>
-        <p className="fcta__urgency">Primera consulta sin cargo · Respondemos hoy en horario hábil (L–V 9 a 19h)</p>
+        <p className="fcta__urgency">Primera consulta sin cargo · Especial foco en sucesiones</p>
         <div className="fcta__contact">
           <div className="fcta__contact-item">
             <span className="ico"><Icon name="message-circle" size={20} /></span>
-            <a href="https://wa.me/5491141664386">+54 9 11 4166-4386</a>
+            <a href="https://wa.me/5491141664386?text=Hola,%20quiero%20una%20consulta%20sobre%20una%20sucesi%C3%B3n" target="_blank" rel="noopener noreferrer">+54 9 11 4166-4386</a>
           </div>
           <div className="fcta__contact-item">
             <span className="ico"><Icon name="mail" size={20} /></span>
-            <a href="mailto:hola@saucedoasociados.com.ar">hola@saucedoasociados.com.ar</a>
+            <a href="mailto:info@saucedo-asociados.com.ar">info@saucedo-asociados.com.ar</a>
           </div>
           <div className="fcta__contact-item">
             <span className="ico"><Icon name="map-pin" size={20} /></span>
-            <span>Av. Pte. Julio A. Roca 695 5°B · CABA</span>
+            <a href="https://maps.app.goo.gl/yBnCdwSroLb8HQqh7" target="_blank" rel="noopener noreferrer">Av. Pte. Julio A. Roca 695 5°B · CABA</a>
           </div>
         </div>
       </div>

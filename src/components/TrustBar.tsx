@@ -1,8 +1,8 @@
 const items = [
-  { num: '+15', acc: ' años', lbl: 'en derecho sucesorio' },
-  { num: '+500', acc: '', lbl: 'juicios sucesorios resueltos' },
-  { num: 'CPACF', acc: '', lbl: 'matrícula vigente · CABA y CASI' },
   { num: '5.0', acc: ' ★', lbl: 'opinión promedio en Google' },
+  { num: 'CABA', acc: '', lbl: 'y Provincia de Buenos Aires' },
+  { num: 'Sucesiones', acc: '', lbl: 'legítimas y testamentarias' },
+  { num: 'Consulta', acc: '', lbl: 'inicial sin cargo' },
 ];
 
 export default function TrustBar() {
