@@ -14,15 +14,14 @@ Current status: front end is implemented, PHP form backend exists, GTM is instal
 
 | Path | Purpose |
 |------|---------|
-| `C:\Dev\sucesiones\` | Active development directory. Run all `npm` commands here. |
-| `G:\My Drive\Varios\Maria\Web\Sucesiones\repo-clone\` | Google Drive repo mirror used for sync/commit workflow. |
+| `G:\My Drive\Varios\Maria\Web\Sucesiones\repo-clone\` | Active development directory and git repository. Use this as the default project directory. |
 | `G:\My Drive\Varios\Maria\Web\Sucesiones\` | Project notes, source assets, and agent documentation. |
 
-Do not run `npm install`, `npm run dev`, `npm run build`, or other Node commands from the Google Drive path. Google Drive can block npm file locking. Use `C:\Dev\sucesiones\` for all development and build commands.
+Legacy note: `C:\Dev\sucesiones\` was removed. Work from `repo-clone` unless the user explicitly creates a new external development copy.
 
 ## Commands
 
-Run from `C:\Dev\sucesiones\` only:
+Run from `G:\My Drive\Varios\Maria\Web\Sucesiones\repo-clone\`:
 
 ```bash
 npm run dev -- --port 4322
@@ -171,7 +170,7 @@ Important: PHP `mail()` cannot be validated through the Astro dev server. Test t
 
 ## Deployment
 
-Build from `C:\Dev\sucesiones\`:
+Build from `G:\My Drive\Varios\Maria\Web\Sucesiones\repo-clone\`:
 
 ```bash
 npm run build
@@ -185,10 +184,9 @@ There may be a dirty worktree. Do not revert or overwrite unrelated user changes
 
 Recommended workflow:
 
-1. Edit and test in `C:\Dev\sucesiones\`.
-2. Copy the changed files to `G:\My Drive\Varios\Maria\Web\Sucesiones\repo-clone\` if a commit from the mirror is needed.
-3. Stage only the files relevant to the task.
-4. Commit only when the user explicitly asks for a commit.
+1. Edit and test in `G:\My Drive\Varios\Maria\Web\Sucesiones\repo-clone\`.
+2. Stage only the files relevant to the task unless the user explicitly asks to commit all changes.
+3. Commit only when the user explicitly asks for a commit.
 
 Never use destructive git commands unless the user explicitly approves them.
 
