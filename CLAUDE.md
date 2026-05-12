@@ -162,7 +162,7 @@ git commit -m "descriptive message"
 git push
 ```
 
-Remote: `github.com/Mario-Herlein/Sucesiones-` (branch: main)
+Remote: `github.com/Mario-Herlein/Sucesiones` (branch: main)
 
 ## Deployment
 
