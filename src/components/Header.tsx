@@ -9,7 +9,7 @@ export default function Header({ logoSrc }: Props) {
   return (
     <header className="hdr">
       <div className="container hdr__inner">
-        <a href="#" className="hdr__logo" aria-label="Saucedo & Asociados">
+        <a href="/sucesiones/" className="hdr__logo" aria-label="Saucedo & Asociados">
           <img src={logoSrc} alt="Saucedo & Asociados" />
         </a>
         <nav className="hdr__nav" aria-label="Principal">

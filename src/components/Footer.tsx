@@ -9,7 +9,7 @@ export default function Footer({ logoSrc }: Props) {
         <div className="ft__grid">
           <div>
             <div className="ft__logo">
-              <img src={logoSrc} alt="Saucedo & Asociados" />
+              <img src={logoSrc} alt="Saucedo & Asociados" loading="lazy" />
             </div>
             <p className="ft__about">
               Estudio jurídico especializado en sucesiones. Atendemos en CABA y Buenos Aires.
