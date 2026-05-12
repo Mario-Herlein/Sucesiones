@@ -16,15 +16,13 @@ Goal: convert visitors into consultations via contact form, phone, or WhatsApp.
 
 | Path | Purpose |
 |------|---------|
-| `C:\Dev\sucesiones\` | Active development — run ALL npm commands here |
-| `G:\My Drive\Varios\Maria\Web\Sucesiones\repo-clone\` | Git mirror — sync here before committing |
-
-**Critical:** Google Drive blocks npm file locking. Never run `npm install` or `npm run` from the Google Drive path. Always work in `C:\Dev\sucesiones\` and copy changed files to `repo-clone\` before committing.
+| `G:\My Drive\Varios\Maria\Web\Sucesiones\repo-clone\` | Active development and git repository |
+| `G:\My Drive\Varios\Maria\Web\Sucesiones\assets\` | Original source assets |
 
 ## Running the Project
 
 ```bash
-cd C:\Dev\sucesiones
+cd "G:\My Drive\Varios\Maria\Web\Sucesiones\repo-clone"
 npm run dev -- --port 4322   # dev server → http://localhost:4322
 npm run build                 # production build → dist/
 ```
@@ -153,10 +151,9 @@ Never use "Iniciar mi consulta", "Enviar consulta", "Consultar este caso" or sim
 ## Git Workflow
 
 ```bash
-# 1. Edit files in C:\Dev\sucesiones\src\ (or public\, astro.config.mjs, etc.)
+# 1. Edit files in repo-clone\src\ (or public\, astro.config.mjs, etc.)
 # 2. Test with npm run dev -- --port 4322
-# 3. Copy changed files to repo-clone\ (PowerShell Copy-Item -Force)
-# 4. From repo-clone directory:
+# 3. From repo-clone directory:
 git add <specific files>
 git commit -m "descriptive message"
 git push
